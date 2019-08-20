@@ -1,6 +1,8 @@
 # Websocket container.
 This is the example websocker app as found in project https://github.com/miguelgrinberg/Flask-SocketIO.
-This container is build from the example directory of the project and a Dockerfile.
+
+The container is build from the example directory of the project and a Dockerfile.
+
 I use this container for testing websockets on network infrastructure like kubernetes ingress controllers.
 
 # Build

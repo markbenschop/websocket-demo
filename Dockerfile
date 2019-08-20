@@ -1,11 +1,8 @@
 FROM alpine:3.8
 MAINTAINER Mark Benschop "mark@benschop.it"
-# RUN apk add python3 py-pip && python3 -m ensurepip && pip install --upgrade pip && pip install -r requirements.txt
-# RUN apk add python3 py-pip && python3 -m ensurepip && pip install -r requirements.txt
-RUN apk add python3 py-pip && type pip && pip --version  #pip install -r requirements.txt
-# RUN easy_install pip
-# COPY templates /app
+RUN apk add python3 py-pip && apk add gcc python2-dev python3-dev libc-dev && type pip && pip --version
 WORKDIR /app
 COPY . /app/
+RUN pip install -r /app/requirements.txt
 ENTRYPOINT ["python"]
 CMD ["app.py"]

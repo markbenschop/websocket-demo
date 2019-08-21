@@ -2,12 +2,15 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: websockets-demo-service
+  name: websockets
+  annotations:
+    traefik.ingress.kubernetes.io/affinity: "true"
+    traefik.ingress.kubernetes.io/sessions-cookie-name: "websockets-demo"
 spec:
   selector:
     app: websockets-demo
   ports:
-    - name: http
+    - name: flask
       protocol: TCP
-      port: 80
+      port: 5000
       targetPort: 5000

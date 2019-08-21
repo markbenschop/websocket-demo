@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: websockets-demo-deployment
+  labels:
+    app: websockets-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: websockets-demo
+  template:
+    metadata:
+      labels:
+        app: websockets-demo
+    spec:
+      containers:
+      - name: websockets-demo-container
+        image: markbenschop/websockets-demo:0.1
+        ports:
+        - containerPort: 5000
+        envFrom:
+        - configMapRef:
+            name: websockets-demo-environment
+      restartPolicy: Always

@@ -1,0 +1,7 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: websockets-demo-environment
+data:
+  NAME: MARK

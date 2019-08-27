@@ -36,7 +36,7 @@ else:
 
 print('Found app_root as {}'.format(app_root))
 
-@app.route(app_endpoint)
+@app.route(app_root)
 def index():
     return render_template('index.html', async_mode=socketio.async_mode)
 

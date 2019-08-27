@@ -29,12 +29,12 @@ def background_thread():
                       namespace='/test')
 
 
-if 'APP_ENDPOINT' in os.environ:
-    app_endpoint = os.environ['APP_ENDPOINT']
+if 'APP_ROOT' in os.environ:
+    app_root = os.environ['APP_ROOT']
 else:
-    app_endpoint = '/'
+    app_root = '/'
 
-print('Found app_endpoint as {}'.format(app_endpoint))
+print('Found app_root as {}'.format(app_root))
 
 @app.route(app_endpoint)
 def index():

@@ -1,4 +1,5 @@
 #!/usr/bin/env python2
+import os
 from threading import Lock
 from flask import Flask, render_template, session, request, \
     copy_current_request_context
@@ -28,7 +29,14 @@ def background_thread():
                       namespace='/test')
 
 
-@app.route('/')
+if 'APP_ENDPOINT' in os.environ:
+    app_endpoint = os.environ['APP_ENDPOINT']
+else:
+    app_endpoint = '/'
+
+print('Found app_endpoint as {}'.format(app_endpoint))
+
+@app.route(app_endpoint)
 def index():
     return render_template('index.html', async_mode=socketio.async_mode)
 

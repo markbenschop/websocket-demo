@@ -7,11 +7,15 @@ I use this container for testing websockets on network infrastructure like kuber
 
 # Build
 
-    docker build . -t websockets:0.1
+    docker build . -t websockets:0.2
 
 # Run
 
-    docker run -p 5000:5000 websockets:0.1
+    docker run -p 5000:5000 websockets:0.2
+
+# Run from docker hub
+
+    docker run -p 5000:5000 markbenschop/websockets:0.2
 
 # Environment variable
 

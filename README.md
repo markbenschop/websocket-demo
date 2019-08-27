@@ -12,3 +12,7 @@ I use this container for testing websockets on network infrastructure like kuber
 # Run
 
     docker run -p 5000:5000 websockets:0.1
+
+# Environment variable
+
+This container can be configured to use another context by setting APP_ROOT. Default value is '/'.
